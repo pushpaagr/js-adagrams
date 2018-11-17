@@ -52,8 +52,27 @@ const Adagrams = {
     // Implement this method for wave 1
   },
 
+  usesAvailableLetters(word, drawn) {
+    let letterArray = word.split("");
+    console.log(letterArray);
+    console.log(drawn);
 
-  
+    for (let letter of letterArray) {
+      if (drawn.includes(letter))  {
+        drawn.splice(drawn.indexOf(letter), 1);
+      } else {
+        return false;
+
+      }
+    }
+    console.log(word);
+    console.log(drawn);
+    return true;
+  },
+
+
+
+
 };
 
 // Do not remove this line or your tests will break!
