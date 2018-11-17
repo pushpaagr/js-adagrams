@@ -121,6 +121,39 @@ const Adagrams = {
     },
 
 
+    highestScoreFrom(words) {
+
+    const highest = {
+      word: '',
+      score: 0
+    }
+
+    for (let word of words) {
+
+      let scoreForWord = this.scoreWord(word)
+
+      if (scoreForWord > highest.score ) {
+        highest.score = scoreForWord;
+        highest.word = word;
+      }
+      else if (scoreForWord == highest.score ) {
+        if (word.length == 10 && highest.word.length != 10) {
+          highest.score = scoreForWord;
+          highest.word = word;
+        } else if (word.length < highest.word.length && highest.word.length != 10) {
+          highest.score = scoreForWord;
+          highest.word = word;
+        }
+
+
+      }
+
+    }
+
+    return highest
+  }
+
+
 
 };
 
